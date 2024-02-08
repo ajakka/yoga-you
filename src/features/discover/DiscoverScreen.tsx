@@ -16,6 +16,7 @@ import { TabStackPropsOf } from "../../navigation/TabStack";
 import { COLORS } from "../../design/colors";
 import Header from "../../component/Header.comp";
 import PosesFlatList from "../../component/PosesFlatList.comp";
+import { POSE_DETAIL_SCREEN } from "../pose_detail/PoseDetailScreen";
 
 export const DISCOVER_SCREEN = "DISCOVER";
 
@@ -42,7 +43,9 @@ export default function DiscoverScreen(props: Props) {
 
       <PosesFlatList
         poses={poses}
-        onPosePress={(pose, index) => console.log("pose", pose, "at", index)}
+        onPosePress={(pose, index) =>
+          props.navigation.navigate(POSE_DETAIL_SCREEN, pose)
+        }
       />
 
       <StatusBar style="auto" />

@@ -19,6 +19,7 @@ import { useIsFocused } from "@react-navigation/native";
 import { TabStackPropsOf } from "../../navigation/TabStack";
 import { NATIVE_STACK_ID } from "../../navigation/NativeStack";
 import { Exercise } from "../../models/Exercise";
+import { EXERCISE_DETAIL_SCREEN } from "../exercise_detail/ExerciseDetailScreen";
 
 export const EXERCISE_SCREEN = "EXERCISE";
 
@@ -44,7 +45,9 @@ export default function ExerciseScreen(props: Props) {
     return (
       <View>
         <TouchableOpacity
-          onPress={(e) => props.navigation.navigate("EXERCISE_DETAIL", item)}
+          onPress={(e) =>
+            props.navigation.navigate(EXERCISE_DETAIL_SCREEN, item)
+          }
         >
           <View
             style={{
